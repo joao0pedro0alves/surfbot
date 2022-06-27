@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-200 text-gray-800;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* NAVBAR
+================= */
+#surfbot-navbar li a.active,
+#surfbot-navbar li a:hover {
+    position: relative;
+    display: flex;
+}
+
+#surfbot-navbar li a.active::after,
+#surfbot-navbar li:hover a::after {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 0.125rem;
+    bottom: 0;
+
+    @apply bg-red-600;
+}
+
+/* CONTENT
+================= */
+.container {
+    @apply max-w-[1260px] mx-auto;
+}

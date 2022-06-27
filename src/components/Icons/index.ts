@@ -1,0 +1,6 @@
+export { default as Boia } from "./Boia"
+export { default as Coco } from "./Coco"
+export { default as IconWall } from "./IconWall"
+export { default as Prancha } from "./Prancha"
+export { default as Ondas } from "./Ondas"
+export { default as Sandalhas } from "./Sandalhas"
