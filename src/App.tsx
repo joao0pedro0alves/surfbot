@@ -1,10 +1,10 @@
-import Plan from "./pages/Plan"
-// import Home from "./pages/Home"
+import { BrowserRouter as Router } from "react-router-dom"
+import Routes from "./routes/routes"
 
 export default function App() {
     return (
-        <>
-            <Plan />
-        </>
+        <Router>
+            <Routes />
+        </Router>
     )
 }

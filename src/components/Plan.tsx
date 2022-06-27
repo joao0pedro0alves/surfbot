@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom"
+
 import Ellipse from "./Ellipse"
 import { Prancha } from "./Icons"
 import { ArrowRight } from "phosphor-react"
 
 interface PlanProps {
+    id?: string
     amountPlanks?: number
     title: string
     details: string[]
@@ -15,6 +18,8 @@ const PLAN_DEFAULT_STYLE =
     "bg-white rounded relative pb-8 pt-9 px-14 w-[370px] h-[414px] drop-shadow-lg"
 
 export default function Plan(props: PlanProps) {
+    const navigate = useNavigate()
+
     const className = PLAN_DEFAULT_STYLE + " " + props.className
 
     const formattedPrice = new Intl.NumberFormat("pt-BR", {
@@ -22,6 +27,8 @@ export default function Plan(props: PlanProps) {
         currency: "BRL",
         minimumFractionDigits: 2,
     }).format(props.price)
+
+    const handleNavigate = () => navigate(`/register/${props.id}`)
 
     return (
         <div className={className}>
@@ -60,7 +67,10 @@ export default function Plan(props: PlanProps) {
 
                 {!props.simple && (
                     <div className="mt-8">
-                        <button className="w-full rounded-md bg-gray-800 text-white flex items-center justify-between py-2 px-4 transition duration-75 hover:bg-gray-700">
+                        <button
+                            onClick={handleNavigate}
+                            className="w-full rounded-md bg-gray-800 text-white flex items-center justify-between py-2 px-4 transition duration-75 hover:bg-gray-700"
+                        >
                             <span className="font-bold text-lg">
                                 MATRICULE-SE
                             </span>
@@ -74,6 +84,7 @@ export default function Plan(props: PlanProps) {
 }
 
 Plan.defaultProps = {
+    id: "0",
     amountPlanks: 1,
     simple: false,
 }

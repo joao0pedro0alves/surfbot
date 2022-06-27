@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useParams } from "react-router-dom"
 import Plan from "./Plan"
 import Tabs from "./Tabs"
 
@@ -9,7 +10,10 @@ const PLANS = [
 ]
 
 export default function ChooseYourPlan() {
-    const [current, setCurrent] = useState<string | number>("0")
+    const { id } = useParams()
+    const [current, setCurrent] = useState<string | number>(
+        id || PLANS[0].value
+    )
 
     return (
         <div className="bg-gray-100 p-8 w-[26.875rem]">

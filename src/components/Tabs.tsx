@@ -41,6 +41,7 @@ export default function Tabs({
                     <input
                         value={tab.value}
                         checked={selected}
+                        readOnly
                         type={"radio"}
                     />
                     <span className="font-bold text-lg">{tab.label}</span>

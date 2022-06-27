@@ -3,7 +3,7 @@ import { Ondas } from "./Icons"
 
 export default function Lessons() {
     return (
-        <div className="relative bg-gray-100 px-11 py-16">
+        <section id="lessons" className="relative bg-gray-100 px-11 py-16">
             <div className="absolute top-[-35px] left-0 right-0 mx-auto flex justify-center">
                 <Ondas />
             </div>
@@ -64,6 +64,6 @@ export default function Lessons() {
                     </span>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
