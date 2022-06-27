@@ -7,9 +7,16 @@ interface PlanProps {
     title: string
     details: string[]
     price: number
+    simple?: boolean
+    className?: React.HTMLAttributes<HTMLDivElement>["className"]
 }
 
+const PLAN_DEFAULT_STYLE =
+    "bg-white rounded relative pb-8 pt-9 px-14 w-[370px] h-[414px] drop-shadow-lg"
+
 export default function Plan(props: PlanProps) {
+    const className = PLAN_DEFAULT_STYLE + " " + props.className
+
     const formattedPrice = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",
@@ -17,7 +24,7 @@ export default function Plan(props: PlanProps) {
     }).format(props.price)
 
     return (
-        <div className="bg-white rounded relative pb-8 pt-9 px-14 w-[370px] h-[414px] drop-shadow-lg">
+        <div className={className}>
             <div className="absolute top-[-20px] left-0 right-0 flex justify-center">
                 <div className="flex items-center gap-2">
                     {[...Array(props.amountPlanks)].map((_, index) => (
@@ -51,12 +58,16 @@ export default function Plan(props: PlanProps) {
                     </span>
                 </div>
 
-                <div className="mt-8 ">
-                    <button className="w-full rounded-md bg-gray-800 text-white flex items-center justify-between py-2 px-4 transition duration-75 hover:bg-gray-700">
-                        <span className="font-bold text-lg">MATRICULE-SE</span>
-                        <ArrowRight size={20} weight="bold" />
-                    </button>
-                </div>
+                {!props.simple && (
+                    <div className="mt-8">
+                        <button className="w-full rounded-md bg-gray-800 text-white flex items-center justify-between py-2 px-4 transition duration-75 hover:bg-gray-700">
+                            <span className="font-bold text-lg">
+                                MATRICULE-SE
+                            </span>
+                            <ArrowRight size={20} weight="bold" />
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     )
@@ -64,4 +75,5 @@ export default function Plan(props: PlanProps) {
 
 Plan.defaultProps = {
     amountPlanks: 1,
+    simple: false,
 }

@@ -5,7 +5,7 @@ interface ButtonProps
     > {}
 
 const BUTTON_DEFAULT_STYLE =
-    "rounded flex gap-2 items-center p-3 bg-gray-800 text-white h-12"
+    "rounded flex gap-2 items-center p-3 bg-gray-800 text-white h-[3.125rem]"
 
 export default function Button(props: ButtonProps) {
     const className = BUTTON_DEFAULT_STYLE + " " + props.className

@@ -3,15 +3,23 @@ interface TextFieldProps
         React.InputHTMLAttributes<HTMLInputElement>,
         HTMLInputElement
     > {
-    label: string
+    label?: string
 }
 
-export default function TextField({ label, ...props }: TextFieldProps) {
+const FORM_CONTROL = "flex flex-col"
+
+export default function TextField({
+    label,
+    className,
+    ...props
+}: TextFieldProps) {
+    const formControlClass = FORM_CONTROL + " " + className
+
     return (
-        <div className="flex flex-col">
-            <label className="text-lg font-bold mb-1">{label}</label>
+        <div className={formControlClass}>
+            {label && <label className="text-lg font-bold mb-1">{label}</label>}
             <input
-                className="bg-gray-100 h-12 outline-blue-300 indent-4"
+                className="rounded shadow-sm bg-gray-100 h-[50px] outline-blue-300 indent-4"
                 {...props}
             />
         </div>
