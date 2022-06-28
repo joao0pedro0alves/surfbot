@@ -13,6 +13,8 @@ Decidi recriar a interface usando React + TailwindCSS, para estudar essa forma d
 
 Futuramente pretendo estender um pouco o projeto, integrando ele ao GraphCMS com GraphQL, apenas para fins didáticos.
 
+[Surbot Ui - Figma](<https://www.figma.com/file/lksCQiXklBJbF0H7aO0Sdg/surfbot-(Copy)?node-id=0%3A1>)
+
 ### Tools
 
 -   ReactJS
