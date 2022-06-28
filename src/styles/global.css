@@ -31,3 +31,13 @@ body {
 .container {
     @apply max-w-[1260px] mx-auto;
 }
+
+/* ICONS
+================= */
+.icon-wall path {
+    @apply transition-colors;
+}
+
+.icon-wall:hover path {
+    @apply fill-blue-500;
+}
