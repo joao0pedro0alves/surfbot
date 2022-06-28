@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useState, MouseEvent } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import clsx from "clsx"
+
+import { scrollToSmooth } from "../services/utils"
 
 import Logo from "./Logo"
 import Ellipse from "./Ellipse"
@@ -14,9 +16,7 @@ export default function Navbar() {
     const isActive = (pathOrHash: string) =>
         pathOrHash === location.pathname || pathOrHash === currentHash
 
-    const handleSpaNavigation: React.MouseEventHandler<
-        HTMLAnchorElement
-    > = async (e) => {
+    const handleSpaNavigation = (e: MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
 
         if (location.pathname !== "/") {
@@ -24,15 +24,12 @@ export default function Navbar() {
             return
         }
 
-        const link = e.currentTarget
+        const scroll = scrollToSmooth(e)
 
-        const anchor = link.href.split("#")[1]
-        const section = document.getElementById(anchor)
-
-        if (section) {
-            const scrollTop = section.offsetTop - 150
-            window.scrollTo({ top: scrollTop, left: 0, behavior: "smooth" })
+        if (scroll) {
+            const [onScroll, anchor] = scroll
             setCurrentHash(`#${anchor}`)
+            onScroll()
         }
     }
 

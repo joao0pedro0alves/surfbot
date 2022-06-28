@@ -1,7 +1,8 @@
+import { FormEvent } from "react"
 import { ArrowRight } from "phosphor-react"
 
 export default function LandingForm() {
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
     }
 

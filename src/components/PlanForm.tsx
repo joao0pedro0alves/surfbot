@@ -1,17 +1,19 @@
+import { FormEvent } from "react"
+
+import { LockKey } from "phosphor-react"
+import { IconWall } from "./Icons"
 import TextField from "./TextField"
 import SelectField from "./SelectField"
 import Button from "./Button"
-import { LockKey } from "phosphor-react"
 import PaymentForm from "./PaymentForm"
 import ChooseYourPlan from "./ChooseYourPlan"
-import { IconWall } from "./Icons"
 
 const STATES = [{ label: "SP", value: "sp" }]
 
 const CITIES = [{ label: "Rio Claro", value: "rc" }]
 
 export default function PlanForm() {
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
         const formData = new FormData(e.currentTarget)

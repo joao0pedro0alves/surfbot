@@ -1,10 +1,12 @@
+import { FormEvent } from "react"
+
+import { ArrowRight } from "phosphor-react"
 import TextField from "./TextField"
 import TextArea from "./TextArea"
 import Button from "./Button"
-import { ArrowRight } from "phosphor-react"
 
 export default function ContactForm() {
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
     }
 
@@ -19,7 +21,7 @@ export default function ContactForm() {
                 autoComplete="email"
             />
             <TextArea label="Mensagem" name="message" required />
-            <Button className="max-w-[230px]">
+            <Button className="max-w-[230px] hover:bg-gray-700">
                 <span className="text-lg font-bold">ENVIAR MENSAGEM</span>
                 <ArrowRight fontSize={20} fontWeight="bold" />
             </Button>
