@@ -44,7 +44,7 @@ export default function Tabs({
                         readOnly
                         type={"radio"}
                     />
-                    <span className="font-bold text-lg">{tab.label}</span>
+                    <span className="font-bold text-sm md:text-lg">{tab.label}</span>
                 </button>
             )
         })

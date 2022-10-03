@@ -16,7 +16,7 @@ export default function ChooseYourPlan() {
     )
 
     return (
-        <div className="bg-gray-100 p-8 w-[26.875rem]">
+        <div className="bg-gray-100 p-4 w-auto md:w-[26.875rem] md:p-8">
             <span className="block font-bold text-lg mb-8">
                 Escolha o Plano
             </span>

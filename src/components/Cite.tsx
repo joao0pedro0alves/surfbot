@@ -5,7 +5,7 @@ export default function Cite() {
             className="bg-no-repeat bg-cover bg-fixed bg-[url(../assets/images/bg-onda.png)] h-[480px]"
         >
             <div className="container h-full flex flex-col items-center justify-center">
-                <h3 className="text-center text-7xl text-white font-serif">
+                <h3 className="text-center text-4xl md:text-5xl lg:text-7xl text-white font-serif">
                     “O surf liberta as ondas de uma vida.”
                 </h3>
 

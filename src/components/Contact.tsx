@@ -10,12 +10,12 @@ export default function Contact() {
                 <h3 className="text-center font-serif text-7xl">Contato</h3>
             </div>
 
-            <div className="flex items-center justify-center gap-28 pb-12">
-                <div className="w-[470px]">
+            <div className="flex items-center justify-center gap-28 pb-12 flex-wrap">
+                <div className="w-[470px] p-4">
                     <ContactForm />
                 </div>
 
-                <div className="h-[470px] border-r-2 border-gray-100"></div>
+                <div className="hidden sm:flex h-[470px] border-r-2 border-gray-100"></div>
 
                 <div className="flex gap-2">
                     <div>
@@ -62,7 +62,7 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="hidden md:flex">
                         <IconWall />
                     </div>
                 </div>

@@ -11,7 +11,7 @@ export default function Lessons() {
             <div>
                 <h2 className="text-center text-7xl font-serif">Aulas</h2>
 
-                <div className="mt-11 flex justify-center items-center gap-8">
+                <div className="mt-11 flex justify-center items-center gap-8 flex-wrap">
                     <Plan
                         amountPlanks={1}
                         title="INFANTIL"

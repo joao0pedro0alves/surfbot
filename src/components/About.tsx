@@ -7,10 +7,10 @@ import { Sandalhas, Coco, Boia } from "./Icons"
 export default function About() {
     return (
         <section id="about-beach" className="bg-white">
-            <div className="container py-16 px-11 flex items-start justify-between w-full gap-32">
+            <div className="container py-16 px-11 flex items-start justify-between w-full gap-32 flex-wrap md:flex-nowrap">
                 {/* ==== ABOUT LOCALIZATION ==== */}
                 <div>
-                    <div className="relative flex flex-col items-center">
+                    <div className="relative flex-col items-center hidden sm:flex">
                         <img
                             alt="Praia"
                             src={beach}

@@ -11,12 +11,12 @@ export default function PaymentForm() {
     const [current, setCurrent] = useState<string | number>("0")
 
     return (
-        <div className="my-4">
+        <div className="my-4 w-auto">
             <span className="block font-bold text-lg text-blue-600">
                 Forma de Pagamento
             </span>
 
-            <div className="border-y-2 border-gray-100 py-8 mt-4 flex flex-col gap-4">
+            <div className="border-y-2 border-gray-100 py-8 mt-4 flex flex-col gap-4 w-auto">
                 <div>
                     <Tabs
                         buttonClassName="w-[210px] bg-gray-100"
@@ -34,11 +34,11 @@ export default function PaymentForm() {
                         label="Nome do Cartão"
                         required
                         placeholder="Nome impresso no cartão"
-                        className="w-[270px]"
+                        className="w-auto md:w-[270px]"
                     />
 
-                    <div className="w-[270px]">
-                        <label className="block text-lg font-bold mb-1">
+                    <div className="w-auto md:w-[270px]">
+                        <label className="block font-bold mb-1 whitespace-nowrap text-sm md:text-base lg:text-lg">
                             Data de Expiração
                         </label>
                         <div className="flex gap-8">
@@ -64,14 +64,14 @@ export default function PaymentForm() {
                         label="Número do Cartão"
                         required
                         placeholder="5555 5555 5555 5555"
-                        className="w-[270px]"
+                        className="w-auto md:w-[270px]"
                     />
                     <TextField
                         name="card.security"
                         label="Código de Segurança"
                         required
                         placeholder="XXX"
-                        className="w-[270px]"
+                        className="w-[150px] md:w-[270px]"
                     />
                 </div>
             </div>

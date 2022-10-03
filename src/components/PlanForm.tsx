@@ -24,11 +24,11 @@ export default function PlanForm() {
 
     return (
         <div className="min-h-screen bg-white">
-            <div className="container flex gap-24 py-20">
+            <div className="container flex gap-24 py-20 flex-wrap justify-center md:justify-between">
                 {/* ==== FORM ==== */}
                 <form
                     onSubmit={handleSubmit}
-                    className="flex flex-col gap-4 min-w-[570px]"
+                    className="flex flex-col gap-4 min-w-[300px] md:min-w-[570px] px-4"
                 >
                     <TextField name="name" label="Nome" autoFocus required />
                     <TextField
@@ -106,10 +106,8 @@ export default function PlanForm() {
 
                 {/* ==== CHOOSE YOUR PLAN ==== */}
                 <div className="flex flex-1 flex-col items-center gap-9">
-                    <div>
-                        <ChooseYourPlan />
-                    </div>
-                    <div>
+                    <ChooseYourPlan />
+                    <div className="hidden md:flex">
                         <IconWall />
                     </div>
                 </div>
