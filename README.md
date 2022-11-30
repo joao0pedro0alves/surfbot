@@ -6,7 +6,7 @@ Um exercício de código de wireframe para front-end.
   <img src="https://raw.githubusercontent.com/danielaversa/surfbot/4319534fa0bca9e4ab7ecba6a18c81daa00865d2/icones/surfbot-logo-dark.svg" alt="Bikcraft Logo">
 </p>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8fc3071c-4c46-48cf-a5fd-502c87ed7a63/deploy-status)](https://app.netlify.com/sites/surfbot/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/532c7b4d-48f3-4be7-ae0e-182024405ca1/deploy-status)](https://app.netlify.com/sites/joao-alves-surbot/deploys)
  
 ## Project
 O Surfbot foi projetado e desenvolvido durante o curso *Advanced UI Design* na plataforma [Origamid](https://www.origamid.com/). É um clone do design original de [André Rafael](https://github.com/origamid).
@@ -29,7 +29,7 @@ Futuramente pretendo estender um pouco o projeto, integrando ele ao GraphCMS com
 
 ## Deploy
 
-* Clique no link a seguir para acessar o projeto !! [Surfbot](https://surfbot.netlify.app/)
+* Clique no link a seguir para acessar o projeto !! [Surfbot](https://joao-alves-surbot.netlify.app/)
 
 ## Contact Me
 
