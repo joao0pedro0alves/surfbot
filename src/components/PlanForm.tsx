@@ -1,7 +1,13 @@
-import { FormEvent } from "react"
-
+import { useState, FormEvent } from "react"
+import { useParams } from "react-router-dom"
 import { LockKey } from "phosphor-react"
+
+import { Plan } from "../@types"
+import { PLANS } from "../utils/plans"
+import { formatPrice } from "../utils/format"
+
 import { IconWall } from "./Icons"
+
 import TextField from "./TextField"
 import SelectField from "./SelectField"
 import Button from "./Button"
@@ -13,6 +19,13 @@ const STATES = [{ label: "SP", value: "sp" }]
 const CITIES = [{ label: "Rio Claro", value: "rc" }]
 
 export default function PlanForm() {
+
+    const { id } = useParams()
+
+    const [current, setCurrent] = useState<Plan>(
+        PLANS.find((p) => p.id === String(id)) || PLANS[0]
+    )
+
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
@@ -20,6 +33,10 @@ export default function PlanForm() {
         const values = Object.fromEntries(formData)
 
         console.log(values)
+    }
+
+    const handleChangePlan = (plan: Plan) => {
+        setCurrent(plan)
     }
 
     return (
@@ -84,10 +101,10 @@ export default function PlanForm() {
                     {/* ==== SUBMIT ==== */}
                     <div className="flex flex-col gap-4">
                         <span className="block text-lg">
-                            Seu cartão será debitado em R$ 49,00
+                            Seu cartão será debitado em {formatPrice(current.price)}
                         </span>
 
-                        <Button className="bg-blue-600 w-[257px] flex items-center justify-center">
+                        <Button className="bg-blue-600 w-[257px] flex items-center justify-center hover:bg-blue-400">
                             <span className="font-bold text-lg">
                                 REALIZAR MATRÍCULA
                             </span>
@@ -106,7 +123,12 @@ export default function PlanForm() {
 
                 {/* ==== CHOOSE YOUR PLAN ==== */}
                 <div className="flex flex-1 flex-col items-center gap-9">
-                    <ChooseYourPlan />
+
+                    <ChooseYourPlan
+                        activePlan={current}
+                        onChangePlan={handleChangePlan}
+                    />
+
                     <div className="hidden md:flex">
                         <IconWall />
                     </div>
